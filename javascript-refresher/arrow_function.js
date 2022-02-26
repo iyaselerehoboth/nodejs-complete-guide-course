@@ -9,9 +9,9 @@ const summarizeUser = function (userName, userAge, userHasHobby){
     return ('Name is: ' + userName + ' age is: ' + userAge + ' and this user has hobbies: ' + userHasHobby);
 }
 
-//Writing the function using arrow function
+//Writing the function using arrow function and string literal for better concatenation
 const summarizeUserTwo = (userName, userAge, userHasHobby) => {
-    return ('Name is: ' + userName + ' age is: ' + userAge + ' and this user has hobbies: ' + userHasHobby);
+    return (`Name is: ${userName} age is: ${userAge} and this user has hobbies: ${userHasHobby}`);
 };
 
 //A shorter way of writing the function if we only have one return statement line
@@ -24,4 +24,5 @@ const addOne = a => a + 1;
 const addRandom = () => 1 + 3;
 
 console.log(add(1, 7));
+console.log(summarizeUser(name, age, hasHobbies));
 console.log(summarizeUserTwo(name, age, hasHobbies));
