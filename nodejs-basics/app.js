@@ -16,7 +16,26 @@ const server = http.createServer((req, res) => {
     }
 
     if(url === '/message' && method === 'POST'){
-        fs.writeFileSync('message.txt', 'This is going to be a dummy text');
+        const body = [];
+
+        /* Create a listener that fires whenever a new chunk of data 
+           is transmitted in the current ongoing request transfer 
+           (nodejs transfers the data in chunks and not necessarily at once depending on the size).
+        */
+        req.on('data', (chunk) => {
+            console.log(chunk);
+            body.push(chunk);
+        });
+
+        /*
+            On end of the data transfer, we then create a buffer from the body array.
+        */
+        req.on('end', () => {
+            const parsedBody = Buffer.concat(body).toString();
+            const message = parsedBody.split('=')[1];
+            fs.writeFileSync('message.txt', message);
+        });
+
         res.statusCode = 302;
         res.setHeader('Location', '/');
         return res.end();
