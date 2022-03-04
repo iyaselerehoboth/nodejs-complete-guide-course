@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-debugging",
+  "version": "1.0.0",
+  "description": "Learn about debugging nodejs and improved development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Iyasele Rehoboth",
+  "license": "ISC"
+}
