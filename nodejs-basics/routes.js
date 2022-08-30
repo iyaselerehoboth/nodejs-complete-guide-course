@@ -50,7 +50,7 @@ const requestHandler = (req, res) => {
 };
 
 /*
-- A method of requesting just one function.
+- A method of exporting just one function.
 
 module.exports = requestHandler;
 */
