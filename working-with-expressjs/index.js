@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const app = express();
 
 const adminRoutes = require('./routes/admin');
@@ -12,7 +13,8 @@ const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({extended: false})); //Middleware function used to parse the body of every request
 
-app.use(adminRoutes);
+//Using "/admin" here filters requests such that only requests that start with /admin/..... are redirected to this adminRoutes router.
+app.use('/admin', adminRoutes);
 
 app.use(shopRoutes);
 
