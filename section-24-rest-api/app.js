@@ -5,7 +5,7 @@ const feedRoutes = require('./routes/feed');
 
 const app = express();
 
-//app.use(bodyParser.urlencoded()); // used for parsing "x-www-form-urlencoded" form-data
+app.use(bodyParser.urlencoded({extended: true})); // used for parsing "x-www-form-urlencoded" form-data
 app.use(bodyParser.json()); //Used for parsing raw json
 
 app.use((req, res, next) => {
